@@ -1,0 +1,204 @@
+@import 'scss-reset/reset';
+
+@import './fonts.scss';
+@import './text.scss';
+@import './colors.scss';
+
+@import '../pages/HomePage/HomePage.scss';
+@import '../pages/ShopPage/ShopPage.scss';
+
+@import '../components/FHeader/FHeader.scss';
+@import '../components/FFooter/FFooter.scss';
+@import '../components/MainBanner/MainBanner.scss';
+@import '../components/CategoryCard/CategoryCard.scss';
+@import '../components/ProductCard/ProductCard.scss';
+@import '../components/ProductList/ProductList.scss';
+@import '../components/RoomsSwiper/RoomsSwiper.scss';
+@import '../components/ImageGrid/ImageGrid.scss';
+@import '../components/PageHeader/PageHeader.scss';
+@import '../components/PagePagination/PagePagination.scss';
+
+body {
+    font-family: 'Poppins';
+    color: $base-black;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+}
+
+.page {
+    padding-top: 101px;
+    width: 100%;
+    // height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 0px 130px;
+}
+
+.section {
+    padding-top: 60px;
+
+    &-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+}
+
+.grey-text {
+    @extend %grey-text;
+}
+
+.base-title {
+    @extend %base-title;
+}
+
+.gold-button {
+    // background: $gold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    a {
+        @extend %caps-text;
+        padding: 25px 72px;
+        position: relative;
+        z-index: 3;
+        transition: .3s;
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 50%;
+        background: $gold;
+        transition: .3s;
+    }
+
+    &::after {
+        top: 0;
+    }
+
+    &::before {
+        bottom: 0;
+    }
+
+    &:hover {
+
+        a {
+            color: $gold;
+            transition: .3s;
+        }
+
+        &::after,
+        &::before {
+            height: 5px;
+            transition: .3s;
+        }
+
+    }
+
+}
+
+.swiper {
+
+    &-pagination {
+        // width: 100%;
+        position: absolute;
+        bottom: 35px;
+        right: 40%;
+        // transform: translateX(-50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        &-bullet {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #D8D8D8;
+            border-radius: 50%;
+            position: relative;
+            transition: .3s;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 25px;
+                height: 25px;
+                border: 1px solid $gold;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s;
+            }
+
+            &-active {
+                background: $gold;
+                transition: .3s;
+
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+
+    &-button-prev,
+    &-button-next {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        background: $base-white;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        z-index: 8;
+
+        &:hover {
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+            transition: .3s;
+        }
+    }
+
+    &-button-prev {
+        left: 20px;
+    }
+
+    &-button-next {
+        right: 20px;
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+}

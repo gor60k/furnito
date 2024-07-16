@@ -1,0 +1,19 @@
+.page-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    &-item {
+        font-size: 20px;
+        font-weight: 300;
+        padding: 15px 25px;
+        background: $bage;
+        border-radius: 10px;
+
+        &.active {
+            background: $gold;
+            color: $base-white;
+        }
+    }
+}

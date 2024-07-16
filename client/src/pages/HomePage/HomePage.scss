@@ -1,0 +1,49 @@
+.home {
+    &_brows {
+        
+        width: 100%;
+    
+
+        &-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+
+    &_swiper-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+
+        &-content {
+            padding-left: 130px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            .grey-text {
+                margin-bottom: 25px;
+                font-size: 16px;
+            }
+        } 
+
+        .room-swiper {
+            width: 60%;
+            position: relative;
+        }
+    }
+
+    &_image-grid {
+        margin-bottom: 50px;
+    }
+
+    .page-pagination {
+        display: none;
+    }
+}

@@ -1,0 +1,57 @@
+@import './colors.scss';
+
+%navlink {
+    font-family: 'Poppins';
+    font-weight: normal;
+    line-height: 100%;
+    color: $base-black;
+}
+
+%subtitle {
+    font-family: 'Poppins';
+    font-weight: normal;
+    line-height: 100%;
+    font-size: 16px;
+    color: $text-color;
+}
+
+%banner-title {
+    font-family: 'Poppins';
+    font-weight: bold;
+    line-height: 120%;
+    font-size: 50px;
+    color: $gold;
+}
+
+%text {
+    font-family: 'Poppins';
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 18px;
+    color: $text-color;
+}
+
+%caps-text {
+    font-family: 'Poppins';
+    font-weight: bold;
+    line-height: 150%;
+    font-size: 16px;
+    color: $base-white;
+    text-transform: uppercase;
+}
+
+%grey-text {
+    font-family: 'Poppins';
+    font-weight: 300;
+    line-height: 150%;
+    font-size: 20px;
+    color: $grey;
+}
+
+%base-title {
+    font-family: 'Poppins';
+    font-weight: bold;
+    line-height: 150%;
+    font-size: 30px;
+    color: $text-color;
+}

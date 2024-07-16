@@ -1,0 +1,35 @@
+.product-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    &.shop_product-list {
+        .show-more-button {
+            display: none;
+        }
+    }
+
+    &.grid-two {
+
+        .product-list-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+    
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+    }
+
+    .show-more-button {
+        width: 245px;
+        padding: 12px 0px;
+        border: 1px solid $gold;
+        font-size: 16px;
+        color: $gold;
+    }
+}
