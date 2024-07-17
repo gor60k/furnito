@@ -17,6 +17,7 @@
 @import '../components/ImageGrid/ImageGrid.scss';
 @import '../components/PageHeader/PageHeader.scss';
 @import '../components/PagePagination/PagePagination.scss';
+@import '../components/FilterSidebar/FilterSidebar.scss';
 
 body {
     font-family: 'Poppins';
@@ -41,6 +42,7 @@ body {
 .wrapper {
     width: 100%;
     padding: 0px 130px;
+    position: relative;
 }
 
 .section {

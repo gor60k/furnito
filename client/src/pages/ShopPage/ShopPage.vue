@@ -39,7 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper" id="sticky-block">
+            <FilterSidebar :wrapperBlock="wrapperBlock"/>
             <ProductList :gridClass="gridState" class="shop_product-list" :limit="limit"
                 @update:products="updateProducts" />
         </div>
@@ -49,6 +50,7 @@
 <script setup>
 import PageHeader from '@/components/PageHeader/PageHeader.vue';
 import ProductList from '@/components/ProductList/ProductList.vue';
+import FilterSidebar from '@/components/FilterSidebar/FilterSidebar.vue';
 import { onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
@@ -65,6 +67,9 @@ const limit = store.state.productsLimit;
 onMounted(async () => {
     await store.dispatch('fetchProducts');
     totalProducts.value = store.getters.getProducts;
+    
+    console.log(document.querySelector('#sticky-block').childNodes[1].clientHeight);
+    console.dir(document.querySelector('#sticky-block'))
 })
 
 const gridState = ref(false);
@@ -72,4 +77,5 @@ const gridState = ref(false);
 const changeGrid = () => {
     gridState.value = !gridState.value;
 }
+
 </script>

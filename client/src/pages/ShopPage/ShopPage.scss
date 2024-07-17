@@ -1,4 +1,13 @@
 .shop {
+
+    .wrapper {
+        padding: 0;
+        display: flex;
+        padding-right: 130px;
+        align-items: flex-start;
+        // justify-content: space-between;
+    }
+
     &_filters {
         width: 100%;
         background: $bage;
