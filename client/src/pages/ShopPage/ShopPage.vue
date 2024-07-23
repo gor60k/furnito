@@ -5,7 +5,7 @@
             <div class="shop_filters-wrapper">
                 <div class="shop_filters-left">
                     <div class="shop_filters-left-buttons">
-                        <button class="shop_filters-button">
+                        <button class="shop_filters-button" @click="openFilters">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="wrapper" id="sticky-block">
-            <FilterSidebar :wrapperBlock="wrapperBlock"/>
+            <FilterSidebar :wrapperBlock="wrapperBlock" :filtersBool="filtersBool"/>
             <ProductList :gridClass="gridState" class="shop_product-list" :limit="limit"
                 @update:products="updateProducts" />
         </div>
@@ -57,6 +57,12 @@ import { useStore } from 'vuex';
 const store = useStore();
 const products = ref([]);
 const totalProducts = ref([]);
+const filtersBool = ref(false);
+
+const openFilters = () => {
+    filtersBool.value = !filtersBool.value;
+    console.log(filtersBool.value);
+}
 
 const updateProducts = (newProducts) => {
     products.value = newProducts;
