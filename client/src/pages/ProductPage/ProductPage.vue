@@ -2,7 +2,7 @@
     <main class="product page">
         <Swiper>
             <SwiperSlide v-for="img in product.galary" :key="img" :thumbs="{ swiper: thumbsSwiper }" :modules="modules">
-                <img :src="'http://localhost:5000/' + img" alt="">
+                <img :src="'http://localhost:5000/' + img" alt="">  
             </SwiperSlide>
         </Swiper>
         <Swiper @swiper="setThumbsSwiper" slides-per-view="4">
