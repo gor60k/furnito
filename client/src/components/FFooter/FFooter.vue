@@ -11,17 +11,27 @@
                     FL 33134 USA</p>
             </div>
             <ul class="footer-nav">
-                <li class="footer-nav-item">Links</li>
-                <li class="footer-nav-item" v-for="route in $router.options.routes" :key="route.path">
+                <li class="footer-nav-item footer-title">Links</li>
+                <li class="footer-nav-item" v-for="route in $router.options.routes.filter(route => route.name)" :key="route.path">
                     <RouterLink :to="route.path">{{ route.name }}</RouterLink>
                 </li>
             </ul>
             <ul class="footer-nav">
-                <li class="footer-nav-item">Help</li>
+                <li class="footer-nav-item footer-title">Help</li>
                 <li class="footer-nav-item" v-for="route in footerList" :key="route.path">
                     <RouterLink :to="route.path">{{ route.name }}</RouterLink>
                 </li>
             </ul>
+            <div class="footer-form">
+                <p class="footer-title">Newsletter</p>
+                <form action="">
+                    <input placeholder="Enter Your Email Address" class="footer-form-input" type="text">
+                    <input class="footer-form-submit" type="submit" value="SUBSCRIBE">
+                </form>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <p>2023 furino. All rights reverved</p>
         </div>
     </footer>
 </template>
